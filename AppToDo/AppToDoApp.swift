@@ -8,10 +8,12 @@
 import SwiftUI
 
 @main
-struct AppToDoApp: App {
+struct ToDoAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+            ListView()
+            }
         }
     }
 }
