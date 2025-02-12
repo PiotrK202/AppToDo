@@ -13,6 +13,7 @@
 		AE30BED72D5CEC4D00A5916A /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE30BED62D5CEC4D00A5916A /* ListView.swift */; };
 		AE30BED92D5CEC7000A5916A /* ListRawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE30BED82D5CEC7000A5916A /* ListRawView.swift */; };
 		AE30BEDB2D5CEC8E00A5916A /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE30BEDA2D5CEC8D00A5916A /* AddView.swift */; };
+		AE30BEDF2D5CEFFE00A5916A /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE30BEDE2D5CEFFE00A5916A /* ItemModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		AE30BED62D5CEC4D00A5916A /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		AE30BED82D5CEC7000A5916A /* ListRawView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRawView.swift; sourceTree = "<group>"; };
 		AE30BEDA2D5CEC8D00A5916A /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		AE30BEDE2D5CEFFE00A5916A /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 		AE30BED52D5CEC0F00A5916A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AE30BEDE2D5CEFFE00A5916A /* ItemModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE30BEDF2D5CEFFE00A5916A /* ItemModel.swift in Sources */,
 				AE30BEDB2D5CEC8E00A5916A /* AddView.swift in Sources */,
 				AE30BED72D5CEC4D00A5916A /* ListView.swift in Sources */,
 				AE30BEC72D5CEBDB00A5916A /* AppToDoApp.swift in Sources */,
