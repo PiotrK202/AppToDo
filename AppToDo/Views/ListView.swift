@@ -20,12 +20,16 @@ struct ListView: View {
             ForEach(items) { item in
               ListRowView(item: item)
             }
+            .onDelete(perform: deletItem)
+                    .onMove(perform: moveItem)
+            }
         }
         .navigationTitle("To Do List")
         .navigationBarItems(leading: EditButton(),
                             trailing: NavigationLink("add", destination: AddView())
         )
     }
+        
 }
 
 struct ListView_Previews: PreviewProvider {
