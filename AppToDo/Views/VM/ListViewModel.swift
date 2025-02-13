@@ -14,21 +14,19 @@ class ListViewModel: ObservableObject {
             saveItem()
         }
     }
-    let itemKey = "items_list"
+    private let itemKey = "items_list"
 
-    init() {
-        getItems()
-    }
 
     func getItems() {
-        guard
-            let data = UserDefaults.standard.data(forKey: itemKey),
-            let savedItems = try? JSONDecoder().decode([ItemModel].self, from: data)
-        else { return }
-       
-        self.item = savedItems
+        do {
+            guard let data = UserDefaults.standard.data(forKey: itemKey) else { return }
+            let savedItems = try JSONDecoder().decode([ItemModel].self, from: data)
+            item = savedItems
+        } catch {
+            print("error")
+        }
     }
-
+    
     func deleteItem(indexSet: IndexSet) {
         item.remove(atOffsets: indexSet)
     }

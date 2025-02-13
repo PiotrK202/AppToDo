@@ -34,5 +34,6 @@ struct ListRowView_Previews: PreviewProvider {
             ListRowView(item: item2)
         }
         .previewLayout(.sizeThatFits)
+        
     }
 }

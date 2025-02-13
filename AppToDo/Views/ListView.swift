@@ -12,9 +12,8 @@ struct ListView: View {
     @EnvironmentObject var listViewModel: ListViewModel
     
     var body: some View {
-        ZStack {
+        VStack {
             if listViewModel.item.isEmpty {
-                VStack {
                     Text("There is nothing to do")
                         .font(.largeTitle)
                         .fontWeight(.bold)
@@ -31,21 +30,24 @@ struct ListView: View {
                             .padding()
                     }
                     Spacer()
-                }
             } else {
                 List {
-                ForEach(listViewModel.item) { item in
-                    ListRowView(item: item)
-                }
-                .onDelete(perform: listViewModel.deleteItem)
-                .onMove(perform: listViewModel.moveItem)
+                    ForEach(listViewModel.item) { item in
+                        ListRowView(item: item)
+                    }
+                    .onDelete(perform: listViewModel.deleteItem)
+                    .onMove(perform: listViewModel.moveItem)
                 }
             }
         }
+        .onAppear(perform: {
+            listViewModel.getItems()
+        })
         .navigationTitle("To do")
         .navigationBarItems(leading: EditButton(),
                             trailing: NavigationLink("add", destination: AddView()))
         }
+     
 }
 
 struct ListView_Previews: PreviewProvider {
