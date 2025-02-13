@@ -14,6 +14,7 @@
 		AE30BED92D5CEC7000A5916A /* ListRawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE30BED82D5CEC7000A5916A /* ListRawView.swift */; };
 		AE30BEDB2D5CEC8E00A5916A /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE30BEDA2D5CEC8D00A5916A /* AddView.swift */; };
 		AE30BEDF2D5CEFFE00A5916A /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE30BEDE2D5CEFFE00A5916A /* ItemModel.swift */; };
+		AE905E3B2D5E0F6C00C96E6B /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE905E3A2D5E0F6C00C96E6B /* ListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		AE30BED82D5CEC7000A5916A /* ListRawView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRawView.swift; sourceTree = "<group>"; };
 		AE30BEDA2D5CEC8D00A5916A /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		AE30BEDE2D5CEFFE00A5916A /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
+		AE905E3A2D5E0F6C00C96E6B /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				AE30BED62D5CEC4D00A5916A /* ListView.swift */,
 				AE30BED82D5CEC7000A5916A /* ListRawView.swift */,
 				AE30BEDA2D5CEC8D00A5916A /* AddView.swift */,
+				AE905E392D5E0F5900C96E6B /* VM */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -90,6 +93,14 @@
 				AE30BEDE2D5CEFFE00A5916A /* ItemModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		AE905E392D5E0F5900C96E6B /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				AE905E3A2D5E0F6C00C96E6B /* ListViewModel.swift */,
+			);
+			path = VM;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +175,7 @@
 			files = (
 				AE30BEDF2D5CEFFE00A5916A /* ItemModel.swift in Sources */,
 				AE30BEDB2D5CEC8E00A5916A /* AddView.swift in Sources */,
+				AE905E3B2D5E0F6C00C96E6B /* ListViewModel.swift in Sources */,
 				AE30BED72D5CEC4D00A5916A /* ListView.swift in Sources */,
 				AE30BEC72D5CEBDB00A5916A /* AppToDoApp.swift in Sources */,
 				AE30BED92D5CEC7000A5916A /* ListRawView.swift in Sources */,
