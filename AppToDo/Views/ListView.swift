@@ -23,7 +23,7 @@ struct ListView: View {
         .navigationBarItems(leading: EditButton(),
                             trailing: NavigationLink("add", destination: AddView()))
         }
-    }
+}
 
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {

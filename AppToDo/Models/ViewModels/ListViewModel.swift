@@ -6,21 +6,27 @@
 //
 
 import Foundation
+import SwiftUI
 
 class ListViewModel: ObservableObject {
-    @Published var item: [ItemModel] = []
+    @Published var item: [ItemModel] = [] {
+        didSet {
+            saveItem()
+        }
+    }
+    let itemKey = "items_list"
     
     init() {
         getItems()
     }
     
     func getItems() {
-        let newItems = [
-            ItemModel(title: "first title", isCompleted: false),
-            ItemModel(title: "secound title", isCompleted: true),
-            ItemModel(title: "third title", isCompleted: false)
-            ]
-        item.append(contentsOf: newItems)
+        guard
+            let data = UserDefaults.standard.data(forKey: itemKey),
+            let savedItems = try? JSONDecoder().decode([ItemModel].self, from: data)
+        else { return }
+       
+        self.item = savedItems
     }
     
     func deleteItem(indexSet: IndexSet) {
@@ -33,6 +39,12 @@ class ListViewModel: ObservableObject {
     func addItem(title: String) {
         let newItem = ItemModel(title: title, isCompleted: false)
         item.append(newItem)
+    }
+    
+    func saveItem() {
+        if let encodedData = try? JSONEncoder().encode(item) {
+            UserDefaults.standard.set(encodedData, forKey: "items_list")
+        }
     }
     
 }
