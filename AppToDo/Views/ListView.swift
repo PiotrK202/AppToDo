@@ -12,14 +12,37 @@ struct ListView: View {
     @EnvironmentObject var listViewModel: ListViewModel
     
     var body: some View {
-        List {
-            ForEach(listViewModel.item) { item in
-                ListRowView(item: item)
+        ZStack {
+            if listViewModel.item.isEmpty {
+                VStack {
+                    Text("There is nothing to do")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .padding()
+                    Text("do sometihng you lazy...")
+                    
+                    NavigationLink(destination: AddView()) {
+                        Text("Try adding something")
+                            .frame(height: 60)
+                            .frame(maxWidth:.infinity)
+                            .foregroundColor(.white)
+                            .background(Color.blue.opacity(0.7))
+                            .cornerRadius(15)
+                            .padding()
+                    }
+                    Spacer()
+                }
+            } else {
+                List {
+                ForEach(listViewModel.item) { item in
+                    ListRowView(item: item)
+                }
+                .onDelete(perform: listViewModel.deleteItem)
+                .onMove(perform: listViewModel.moveItem)
+                }
             }
-            .onDelete(perform: listViewModel.deleteItem)
-            .onMove(perform: listViewModel.moveItem)
-            }
-        .navigationTitle("To do app")
+        }
+        .navigationTitle("To do")
         .navigationBarItems(leading: EditButton(),
                             trailing: NavigationLink("add", destination: AddView()))
         }
