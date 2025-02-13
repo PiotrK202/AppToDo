@@ -11,7 +11,7 @@ class ListViewModel: ObservableObject {
     @Published var item: [ItemModel] = []
     
     init() {
-        
+        getItems()
     }
     
     func getItems() {
@@ -29,4 +29,10 @@ class ListViewModel: ObservableObject {
     func moveItem(from: IndexSet, to: Int) {
         item.move(fromOffsets: from, toOffset: to)
     }
+    
+    func addItem(title: String) {
+        let newItem = ItemModel(title: title, isCompleted: false)
+        item.append(newItem)
+    }
+    
 }

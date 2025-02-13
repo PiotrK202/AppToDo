@@ -14,7 +14,7 @@ struct ListView: View {
     var body: some View {
         List {
             ForEach(listViewModel.item) { item in
-              ListRowView(item: item)
+                ListRowView(item: item)
             }
             .onDelete(perform: listViewModel.deleteItem)
             .onMove(perform: listViewModel.moveItem)
